@@ -1,0 +1,1273 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Padaria Doce Pão | Carlos Chagas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <nav class="container">
+
+            <div class="logo">
+                <i class="fa-solid fa-bread-slice"></i>
+                Doce <span>Pão</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <button class="nav-btn active"
+                            onclick="switchPage('inicio')">
+                        Início
+                    </button>
+                </li>
+
+                <li>
+                    <button class="nav-btn"
+                            onclick="switchPage('paes')">
+                        Pães (10)
+                    </button>
+                </li>
+
+                <li>
+                    <button class="nav-btn"
+                            onclick="switchPage('doces')">
+                        Doces (10)
+                    </button>
+                </li>
+
+                <li>
+                    <button class="nav-btn"
+                            onclick="switchPage('salgados')">
+                        Salgados (10)
+                    </button>
+                </li>
+
+                <li>
+                    <button class="nav-btn"
+                            onclick="switchPage('bebidas')">
+                        Bebidas (10)
+                    </button>
+                </li>
+
+                <li>
+                    <button class="nav-btn"
+                            onclick="switchPage('sobre')">
+                        Sobre
+                    </button>
+                </li>
+
+                <li>
+                    <button class="nav-btn"
+                            onclick="switchPage('contato')">
+                        Contato
+                    </button>
+                </li>
+
+            </ul>
+
+            <div class="cart-icon-btn"
+                 onclick="toggleCartModal()">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span id="cart-count">0</span>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             INÍCIO
+        ========================== -->
+
+        <section id="page-inicio" class="page active">
+
+            <div class="hero">
+
+                <div class="hero-text">
+
+                    <h1>
+                        O Melhor Café e Panificação
+                        de Carlos Chagas
+                    </h1>
+
+                    <p>
+                        Pães quentinhos, salgados crocantes,
+                        doces deliciosos e bebidas especiais.
+                    </p>
+
+                    <button class="btn"
+                            onclick="switchPage('paes')">
+                        Ver Cardápio Completo
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Categorias em Destaque
+            </h2>
+
+
+            <div class="categories-grid">
+
+                <div class="category-card"
+                     onclick="switchPage('paes')">
+
+                    <img src="img/pao caseiro.jpg"
+                         alt="Pães">
+
+                    <h3>Pães Artesanais</h3>
+
+                </div>
+
+
+                <div class="category-card"
+                     onclick="switchPage('doces')">
+
+                    <img src="img/torta de limao.jpg"
+                         alt="Doces">
+
+                    <h3>Doces & Tortas</h3>
+
+                </div>
+
+
+                <div class="category-card"
+                     onclick="switchPage('salgados')">
+
+                    <img src="img/coxinha de costela.jpg"
+                         alt="Salgados">
+
+                    <h3>Salgados & Coxinhas</h3>
+
+                </div>
+
+
+                <div class="category-card"
+                     onclick="switchPage('bebidas')">
+
+                    <img src="img/cafe expresso.jpg"
+                         alt="Bebidas">
+
+                    <h3>Cafés & Bebidas</h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PÃES — 10 PRODUTOS
+        ========================== -->
+
+        <section id="page-paes" class="page">
+
+            <h2 class="section-title">
+                Nossos Pães — 10 Opções
+            </h2>
+
+            <div class="products-grid" id="grid-paes">
+
+                <!-- PÃO 01 -->
+                <div class="product-card">
+
+                    <img src="img/pao natural.jpg"
+                         alt="Pão 01">
+
+                    <h3>Pão de Forma Artesanal</h3>
+
+                    <p> Ideal para torradas e sanduíches.</p>
+
+                    <strong>R$ 10,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(1)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 02 -->
+                <div class="product-card">
+
+                    <img src="img/pao de alho.jpg"
+                         alt="Pão 02">
+
+                    <h3>Pão de Alho</h3>
+
+                    <p>Ideal para o seu lanche.</p>
+
+                    <strong>R$ 8,99</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(2)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 03 -->
+                <div class="product-card">
+
+                    <img src="img/pao com coco.jpg"
+                         alt="Pão 03">
+
+                    <h3>Pão de Coco</h3>
+
+                    <p>Fofinho com cobertura de leite condensado.</p>
+
+                    <strong>R$ 9,99</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(3)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 04 -->
+                <div class="product-card">
+
+                    <img src="img/pao frances.jpg"
+                         alt="Pão 04">
+
+                    <h3>Pão Frances</h3>
+
+                    <p>Crocante e quentinho a toda hora.</p>
+
+                    <strong>R$ 0,50 (un)</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(4)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 05 -->
+                <div class="product-card">
+
+                    <img src="img/pao integral.jpg"
+                         alt="Pão 05">
+
+                    <h3>Pão Integral Grãos</h3>
+
+                    <p>100% integral rico em fibras.</p>
+
+                    <strong>R$ 9,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(5)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 06 -->
+                <div class="product-card">
+
+                    <img src="img/pao de queijio.jpg"
+                         alt="Pão 06">
+
+                    <h3>Pão de Queijo</h3>
+
+                    <p>Tradicional mineiro com queijo canastra.</p>
+
+                    <strong>R$ 1,50 (un)</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(6)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 07 -->
+                <div class="product-card">
+
+                    <img src="img/paod e jqueijo.jpg"
+                         alt="Pão 07">
+
+                    <h3>Pão Caseiro Recheado <q></q></h3>
+
+                    <p>Recheado com presunto e queijo.</p>
+
+                    <strong>R$ 7,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(7)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 08 -->
+                <div class="product-card">
+
+                    <img src="img/croissant.jpg"
+                         alt="Pão 08">
+
+                    <h3>Croissant de Manteiga</h3>
+
+                    <p>Massa folhada tradicional francesa..</p>
+
+                    <strong>R$ 7,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(8)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 09 -->
+                <div class="product-card">
+
+                    <img src="img/baguete recheada.jpg"
+                         alt="Pão 09">
+
+                    <h3> Baguete Recheada</h3>
+
+                    <p>Com linguiça calabresa, catupiry e bacon.</p>
+
+                    <strong>R$ 9,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(9)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- PÃO 10 -->
+                <div class="product-card">
+
+                    <img src="img/brioche frances.jpg"
+                         alt="Pão 10">
+
+                    <h3>Massa leve e amanteigada.</h3>
+
+                    <p>Descrição do pão.</p>
+
+                    <strong>R$ 9,90</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(10)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DOCES — 10 PRODUTOS
+        ========================== -->
+
+        <section id="page-doces" class="page">
+
+            <h2 class="section-title">
+                Nossos Doces — 10 Opções
+            </h2>
+
+            <div class="products-grid" id="grid-doces">
+
+                <!-- DOCE 01 -->
+                <div class="product-card">
+
+                    <img src="img/bolo vulcão.jpg"
+                         alt="Doce 01">
+
+                    <h3>Bolo de Chocolate Supremo</h3>
+
+                    <p> Fatia recheada com brigadeiro gourmet.</p>
+
+                    <strong>R$ 8,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(11)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 02 -->
+                <div class="product-card">
+
+                    <img src="img/torta de limao.jpg"
+                         alt="Doce 02">
+
+                    <h3>Torta de Limão</h3>
+
+                    <p> Com merengue maçaricado.</p>
+
+                    <strong>R$ 7,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(12)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 03 -->
+                <div class="product-card">
+
+                    <img src="img/pudim.jpg"
+                         alt="Doce 03">
+
+                    <h3>Pudim de Leite Condensado</h3>
+
+                    <p>Sem furinhos, calda cremosa.</p>
+
+                    <strong>R$ 10,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(13)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 04 -->
+                <div class="product-card">
+
+                    <img src="img/sonho.jpg"
+                         alt="Doce 04">
+
+                    <h3>Sonho de Doce de Leite</h3>
+
+                    <p> Massa fofinha polvilhada com açúcar.</p>
+
+                    <strong>R$ 5,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(14)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 05 -->
+                <div class="product-card">
+
+                    <img src="img/brigadeiro.jpg"
+                         alt="Doce 05">
+
+                    <h3>Brigadeiro Gourmet</h3>
+
+                    <p> Feito com chocolate 50% cacau.</p>
+
+                    <strong>R$ 3,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(15)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 06 -->
+                <div class="product-card">
+
+                    <img src="img/beijinho de coco.jpg"
+                         alt="Doce 06">
+
+                    <h3> Beijinho de Coco</h3>
+
+                    <p>Tradicional com coco ralado fresco.</p>
+
+                    <strong>R$ 3,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(16)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 07 -->
+                <div class="product-card">
+
+                    <img src="img/torta holandesa.jpg"
+                         alt="Doce 07">
+
+                    <h3> Torta Holandesa</h3>
+
+                    <p> Com creme leve e biscoito.</p>
+
+                    <strong>R$ 9,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(17)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 08 -->
+                <div class="product-card">
+
+                    <img src="img/dount.jpg"
+                         alt="Doce 08">
+
+                    <h3> Donut Recheado</h3>
+
+                    <p>Glacê rosa com confeitos coloridos.</p>
+
+                    <strong>R$ 6,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(18)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 09 -->
+                <div class="product-card">
+
+                    <img src="img/carolina.jpg"
+                         alt="Doce 09">
+
+                    <h3>Carolina Recheada</h3>
+
+                    <p>Recheio de doce de leite..</p>
+
+                    <strong>R$ 4,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(19)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- DOCE 10 -->
+                <div class="product-card">
+
+                    <img src="img/bolo de cenpura.jpg"
+                         alt="Doce 10">
+
+                    <h3>Bolo Vulcão de Cenoura"</h3>
+
+                    <p>Muito brigadeiro por cima.</p>
+
+                    <strong>R$ 4,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(20)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SALGADOS — 10 PRODUTOS
+        ========================== -->
+
+        <section id="page-salgados" class="page">
+
+            <h2 class="section-title">
+                Nossos Salgados — 10 Opções
+            </h2>
+
+            <div class="products-grid" id="grid-salgados">
+
+                <!-- SALGADO 01 -->
+                <div class="product-card">
+
+                    <img src="img/coxinha.jpg"
+                         alt="Salgado 01">
+
+                    <h3>Coxinha de Frango c/ Catupiry</h3>
+
+                    <p>Massa de batata crocante</p>
+
+                    <strong>R$ 6,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(21)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 02 -->
+                <div class="product-card">
+
+                    <img src="img/empada de palmito.jpg"
+                         alt="Salgado 02">
+
+                    <h3> Empada de Palmito</h3>
+
+                    <p> Massa que derrete na boca.</p>
+
+                    <strong>R$ 6,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(22)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 03 -->
+                <div class="product-card">
+
+                    <img src="img/pastel carne.jpg"
+                         alt="Salgado 03">
+
+                    <h3>Pastel Assado de Carne</h3>
+
+                    <p> Carne moída temperada.</p>
+
+                    <strong>R$ 6,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(23)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 04 -->
+                <div class="product-card">
+
+                    <img src="img/enroladinho.jpg"
+                         alt="Salgado 04">
+
+                    <h3>Enroladinho de Presunto e Queijo</h3>
+
+                    <p> Assado na hora.</p>
+
+                    <strong>R$ 5,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(24)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 05 -->
+                <div class="product-card">
+
+                    <img src="img/kibe.jpg"
+                         alt="Salgado 05">
+
+                    <h3>Kibe Recheado com Queijo</h3>
+
+                    <p>Bem temperado com hortelã.</p>
+
+                    <strong>R$ 6,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(25)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 06 -->
+                <div class="product-card">
+
+                    <img src="img/esfira.jpg"
+                         alt="Salgado 06">
+
+                    <h3> Esfiha Aberta de Carne</h3>
+
+                    <p> Com limão e especiarias.</p>
+
+                    <strong>R$ 5,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(26)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 07 -->
+                <div class="product-card">
+
+                    <img src="img/folhados de salchisa.jpg"
+                         alt="Salgado 07">
+
+                    <h3 > Folhado de Salsicha</h3>
+
+                    <p> Massa folhada leve.</p>
+
+                    <strong>R$ 5,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(27)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 08 -->
+                <div class="product-card">
+
+                    <img src="img/coxinha de costela.jpg"
+                         alt="Salgado 08">
+
+                    <h3> Coxinha de Costela</h3>
+
+                    <p> Massa de mandioca recheada.</p>
+
+                    <strong>R$ 8,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(28)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 09 -->
+                <div class="product-card">
+
+                    <img src="img/paode batata.jpg"
+                         alt="Salgado 09">
+
+                    <h3>Pão de Batata com Requeijão</h3>
+
+                    <p> Super macio e recheado.</p>
+
+                    <strong>R$ 6,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(29)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- SALGADO 10 -->
+                <div class="product-card">
+
+                    <img src="img/risole de camaraoi.jpg"
+                         alt="Salgado 10">
+
+                    <h3>Rissoles de Camarão</h3>
+
+                    <p> Creme suave de camarão.</p>
+
+                    <strong>R$ 7,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(30)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BEBIDAS — 10 PRODUTOS
+        ========================== -->
+
+        <section id="page-bebidas" class="page">
+
+            <h2 class="section-title">
+                Nossas Bebidas — 10 Opções
+            </h2>
+
+            <div class="products-grid" id="grid-bebidas">
+
+                <!-- BEBIDA 01 -->
+                <div class="product-card">
+
+                    <img src="img/cafe expresso.jpg"
+                         alt="Bebida 01">
+
+                    <h3> Café Espresso Express</h3>
+
+                    <p> Grãos selecionados moídos na hora.</p>
+
+                    <strong>R$ 4,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(31)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 02 -->
+                <div class="product-card">
+
+                    <img src="img/capuccino cremoso.jpg"
+                         alt="Bebida 02">
+
+                    <h3> Cappuccino Cremoso</h3>
+
+                    <p> Com polvilhado de canela e chocolate..</p>
+
+                    <strong>R$ 7,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(32)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 03 -->
+                <div class="product-card">
+
+                    <img src="img/cafe com leite.jpg"
+                         alt="Bebida 03">
+
+                    <h3> Café com Leite (Pingado)</h3>
+
+                    <p> O clássico do café da manhã.</p>
+
+                    <strong>R$ 4,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(33)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 04 -->
+                <div class="product-card">
+
+                    <img src="img/mocaccino.jpg"
+                         alt="Bebida 04">
+
+                    <h3> Mocaccino</h3>
+
+                    <p> Espresso, leite e calda de chocolate.</p>
+
+                    <strong>R$ 8,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(34)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 05 -->
+                <div class="product-card">
+
+                    <img src="img/coca.jpg"
+                         alt="Bebida 05">
+
+                    <h3> Refrigerante Coca-Cola 350ml</h3>
+
+                    <p> Lata trincando de gelada.</p>
+
+                    <strong>R$ 5,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(35)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 06 -->
+                <div class="product-card">
+
+                    <img src="img/guarana.jpg"
+                         alt="Bebida 06">
+
+                    <h3>Guaraná Antártica 350ml</h3>
+
+                    <p>Lata gelada.</p>
+
+                    <strong>R$ 5,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(36)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 07 -->
+                <div class="product-card">
+
+                    <img src="img/suco de laranja.jpg"
+                         alt="Bebida 07">
+
+                    <h3>Suco Natural de Laranja 400ml</h3>
+
+                    <p>100% fruta natural batido na hora.</p>
+
+                    <strong>R$ 7,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(37)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 08 -->
+                <div class="product-card">
+
+                    <img src="img/suco de morango.jpg"
+                         alt="Bebida 08">
+
+                    <h3> Suco de Polpa de Morango</h3>
+
+                    <p> Com leite ou água.</p>
+
+                    <strong>R$ 6,50</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(38)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 09 -->
+                <div class="product-card">
+
+                    <img src="img/agua.jpg"
+                         alt="Bebida 09">
+
+                    <h3> Água Mineral 500ml</h3>
+
+                    <p> Sem gás.</p>
+
+                    <strong>R$ 03,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(39)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+
+                <!-- BEBIDA 10 -->
+                <div class="product-card">
+
+                    <img src="img/chocolate quente.jpg"
+                         alt="Bebida 10">
+
+                    <h3> Chocolate Quente Cremoso</h3>
+
+                    <p> Estilo europeu bem denso.</p>
+
+                    <strong>R$ 08,00</strong>
+
+                    <button class="btn"
+                            onclick="addToCart(40)">
+                        Adicionar ao Carrinho
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section id="page-sobre" class="page">
+
+            <div class="about-card">
+
+                <h2>
+                    Sobre a Padaria Doce Pão
+                </h2>
+
+                <p>
+                    Há mais de 10 anos servindo a população
+                    de Carlos Chagas com ingredientes frescos
+                    e muito carinho.
+                </p>
+
+                <p>
+                    Nossos pães, doces e salgados são preparados
+                    diariamente com receitas especiais.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTATO
+        ========================== -->
+
+        <section id="page-contato" class="page">
+
+            <h2 class="section-title">
+                Atendimento & Localização
+            </h2>
+
+            <div class="contact-box">
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Rua Principal, 123 - Centro,
+                    Carlos Chagas - MG
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    (33) 99999-8888
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-clock"></i>
+                    Segunda a Sábado:
+                    06:00 às 19:30
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         CARRINHO
+    ========================== -->
+
+    <div id="cart-modal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close-btn"
+                  onclick="toggleCartModal()">
+                &times;
+            </span>
+
+            <h2>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Seu Carrinho
+            </h2>
+
+            <div id="cart-items-list">
+
+                <p class="empty-msg">
+                    Seu carrinho está vazio.
+                </p>
+
+            </div>
+
+            <div class="cart-summary">
+
+                <h3>
+                    Total:
+                    R$ <span id="cart-total">0.00</span>
+                </h3>
+
+            </div>
+
+
+            <!-- CHECKOUT -->
+
+            <form id="checkout-form"
+                  onsubmit="finishOrder(event)">
+
+                <h3>
+                    Dados para Entrega
+                </h3>
+
+                <input type="text"
+                       id="cust-name"
+                       placeholder="Seu Nome Completo"
+                       required>
+
+                <input type="text"
+                       id="cust-address"
+                       placeholder="Endereço de Entrega Completo"
+                       required>
+
+
+                <h3>
+                    Forma de Pagamento
+                </h3>
+
+                <select id="payment-method"
+                        required>
+
+                    <option value="">
+                        Selecione a forma de pagamento...
+                    </option>
+
+                    <option value="Pix">
+                        PIX
+                    </option>
+
+                    <option value="Cartão de Crédito">
+                        Cartão de Crédito
+                    </option>
+
+                    <option value="Cartão de Débito">
+                        Cartão de Débito
+                    </option>
+
+                    <option value="Dinheiro">
+                        Dinheiro
+                    </option>
+
+                </select>
+
+
+                <button type="submit"
+                        class="btn btn-block">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Finalizar Pedido via WhatsApp
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         WHATSAPP
+    ========================== -->
+
+    <a href="#"
+       class="whatsapp-float"
+       onclick="toggleCartModal()">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <span class="float-badge"
+              id="float-cart-count">
+            0
+        </span>
+
+    </a>
+
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Padaria Doce Pão
+            • Carlos Chagas - MG
+            | Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
